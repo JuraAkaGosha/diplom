@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Sign in</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <form [formGroup]="signInForm">
+      <ion-item>
+        <ion-label floating>Email</ion-label>
+        <ion-input type="text" [(ngModel)]="signInModel.email" name="email" formControlName="email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Password</ion-label>
+        <ion-input type="password" [(ngModel)]="signInModel.password" name="password" formControlName="password"></ion-input>
+      </ion-item>
+      <ion-buttons center>
+        <button
+          type="submit"
+          ion-button
+          outline
+          [disabled]="!signInForm.valid"
+          (click)="onSignIn()"
+        >
+          Sign In
+        </button>
+      </ion-buttons>
+    </form>
+  </ion-list>
+</ion-content>

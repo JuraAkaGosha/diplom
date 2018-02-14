@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Sign up</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <form *ngIf="asyncWait" [formGroup]="signUpForm">
+      <ion-item>
+        <ion-label floating>Email</ion-label>
+        <ion-input type="text" [(ngModel)]="signUpModel.email" name="email" formControlName="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Password</ion-label>
+        <ion-input type="password" [(ngModel)]="signUpModel.password" name="password" formControlName="password"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Name</ion-label>
+        <ion-input type="text" [(ngModel)]="signUpModel.name" name="name" formControlName="name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Surname</ion-label>
+        <ion-input type="text" [(ngModel)]="signUpModel.surname" name="surname" formControlName="surname"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Phone</ion-label>
+        <ion-input type="text" [(ngModel)]="signUpModel.phone" name="phone" formControlName="phone"></ion-input>
+      </ion-item>
+      <ion-buttons center>
+        <button
+          type="submit"
+          ion-button
+          outline
+          [disabled]="!signUpForm.valid"
+          (click)="onSignUp()"
+        >
+          Sign Up
+        </button>
+      </ion-buttons>
+    </form>
+  </ion-list>
+</ion-content>

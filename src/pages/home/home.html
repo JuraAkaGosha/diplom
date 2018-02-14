@@ -1,0 +1,26 @@
+<general-header [title]="'Home'" (onLogOut)="logOut()"></general-header>
+
+<ion-content padding>
+
+  <ion-card>
+    <img src="./assets/imgs/general/no-avatar.jpg">
+    <ion-fab right top>
+      <button ion-fab>
+        <ion-icon name="camera"></ion-icon>
+      </button>
+    </ion-fab>
+    <ion-item text-center>
+      <h2 *ngIf="user">{{user.surname}} {{user.name}}</h2>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="mail" item-start large></ion-icon>
+      <h2 *ngIf="user"> {{user.email}}</h2>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="call" item-start large></ion-icon>
+      <h2 *ngIf="user"> {{user.phone}}</h2>
+    </ion-item>
+  </ion-card>
+
+</ion-content>
